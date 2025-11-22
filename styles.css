@@ -1,0 +1,125 @@
+/* Estilo general */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    background: #0b0c10;
+    color: #f5f5f5;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #11141c;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Header */
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #cfd6e4;
+    font-size: 0.95rem;
+}
+
+/* Sección de cada paso */
+.step {
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.step:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.step h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.step p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: #d3daea;
+}
+
+.step code {
+    background: #181b23;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Caja de código + botón */
+.code-box {
+    position: relative;
+    background: #05060a;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.9rem 0.9rem 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.code-box pre {
+    margin: 0;
+    overflow-x: auto;
+    font-family: "Fira Code", "JetBrains Mono", "Consolas", monospace;
+    font-size: 0.9rem;
+    color: #e6edf7;
+}
+
+/* Botón de copiar */
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    background: #2a6df4;
+    color: #f5f5f5;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.copy-btn:hover {
+    background: #1b53c2;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42, 109, 244, 0.45);
+}
+
+.copy-btn.copied {
+    background: #16a34a;
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #9ba3b8;
+}

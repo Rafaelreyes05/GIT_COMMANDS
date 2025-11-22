@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guía rápida: Subir proyecto a GitHub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Guía rápida: Subir proyecto a GitHub</h1>
+      <p>Pasos esenciales para subir un proyecto local a GitHub usando CMD.</p>
+    </header>
+
+    <!-- Paso 1 -->
+    <section class="step">
+      <h2>1. Entrar a la carpeta del proyecto</h2>
+      <p>Abre CMD directamente en la carpeta o navega con <code>cd</code>:</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-1">Copiar</button>
+        <pre><code id="code-1">cd "C:\ruta\de\tu\proyecto"</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 2 -->
+    <section class="step">
+      <h2>2. Inicializar Git</h2>
+      <p>Convierte tu carpeta en un repositorio Git local (solo una vez).</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-2">Copiar</button>
+        <pre><code id="code-2">git init</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 3 -->
+    <section class="step">
+      <h2>3. Ver el estado actual</h2>
+      <p>Revisa qué archivos están listos para subir.</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-3">Copiar</button>
+        <pre><code id="code-3">git status</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 4 -->
+    <section class="step">
+      <h2>4. Agregar todos los archivos</h2>
+      <p>Prepara los archivos para el commit.</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-4">Copiar</button>
+        <pre><code id="code-4">git add .</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 5 -->
+    <section class="step">
+      <h2>5. Crear el commit</h2>
+      <p>Guarda un checkpoint de tus cambios en tu repositorio local.</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-5">Copiar</button>
+        <pre><code id="code-5">git commit -m "Initial commit"</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 6 -->
+    <section class="step">
+      <h2>6. Conectar con tu repositorio remoto (GitHub)</h2>
+      <p>Cambia <code>TU-USUARIO</code> y <code>TU-REPO</code>.</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-6">Copiar</button>
+        <pre><code id="code-6">git remote add origin https://github.com/TU-USUARIO/TU-REPO.git</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso Opcional: Remove Origin -->
+    <section class="step">
+      <h2>Opcional: eliminar remoto anterior</h2>
+      <p>Si aparece el error <code>remote origin already exists</code>, haz esto:</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-remove-origin">Copiar</button>
+        <pre><code id="code-remove-origin">git remote remove origin</code></pre>
+      </div>
+
+      <p>Luego agrega el nuevo remoto:</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-add-origin-again">Copiar</button>
+        <pre><code id="code-add-origin-again">git remote add origin https://github.com/TU-USUARIO/TU-REPO.git</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 7 -->
+    <section class="step">
+      <h2>7. Asegurar que la rama principal sea main</h2>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-7">Copiar</button>
+        <pre><code id="code-7">git branch -M main</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 8 -->
+    <section class="step">
+      <h2>8. Primer push</h2>
+      <p>Sube tu proyecto por primera vez.</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-8">Copiar</button>
+        <pre><code id="code-8">git push -u origin main</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 9 -->
+    <section class="step">
+      <h2>9. Subir cambios futuros</h2>
+      <p>Usa estos tres comandos siempre que modifiques algo:</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-9">Copiar</button>
+        <pre><code id="code-9">git add .
+git commit -m "Descripción del cambio"
+git push</code></pre>
+      </div>
+    </section>
+
+    <!-- Paso 10 -->
+    <section class="step">
+      <h2>10. Error común: remote contiene cambios</h2>
+      <p>Si aparece el error <code>fetch first</code>, puedes forzar el push:</p>
+      <div class="code-box">
+        <button class="copy-btn" data-copy="#code-10">Copiar</button>
+        <pre><code id="code-10">git push -u origin main --force</code></pre>
+      </div>
+    </section>
+
+    <footer>
+      <p>Creado para que nunca se te olviden los pasos 🚀</p>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll(".copy-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const selector = btn.getAttribute("data-copy");
+        const code = document.querySelector(selector).innerText;
+
+        navigator.clipboard.writeText(code).then(() => {
+          const original = btn.textContent;
+          btn.textContent = "¡Copiado!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove("copied");
+          }, 1200);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
