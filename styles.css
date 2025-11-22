@@ -24,36 +24,55 @@ body {
 
 header h1 {
     font-size: 1.9rem;
-    margin-bottom: 0.4rem;
 }
 
 header p {
-    color: #cfd6e4;
     margin-bottom: 1.5rem;
-    font-size: 0.95rem;
+    color: #cfd6e4;
 }
 
-/* Secciones grandes */
-.big-section {
-    margin-bottom: 2.5rem;
+/* PESTAÑAS */
+.tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+.tab-btn {
+    flex: 1;
+    padding: 0.8rem;
+    background: none;
+    border: none;
+    color: #9ba3b8;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: 0.25s;
+}
+
+.tab-btn.active {
+    color: #ffffff;
+    border-bottom: 3px solid #2a6df4;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* SECCIONES Y PASOS */
 .big-section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
-.big-section>p {
-    color: #d3daea;
-    margin-bottom: 1.2rem;
-    font-size: 0.95rem;
-}
-
-/* Pasos */
 .step {
     margin-bottom: 1.8rem;
-    padding-bottom: 1.4rem;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    padding-bottom: 1.2rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .step:last-of-type {
@@ -62,69 +81,56 @@ header p {
 
 .step h3 {
     font-size: 1.1rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .step p {
+    margin-bottom: 0.5rem;
     color: #d3daea;
-    margin-bottom: 0.7rem;
-    font-size: 0.94rem;
 }
 
-.step code {
-    background: #181b23;
-    padding: 0.1rem 0.35rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-/* Caja de código */
+/* CODE BOX */
 .code-box {
     position: relative;
     background: #05060a;
     border-radius: 12px;
+    padding: 0.9rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 0.9rem 0.9rem 0.75rem;
-    margin-top: 0.25rem;
 }
 
 .code-box pre {
     margin: 0;
     overflow-x: auto;
-    color: #e6edf7;
-    font-family: "Fira Code", "JetBrains Mono", monospace;
+    font-family: "Fira Code", monospace;
     font-size: 0.9rem;
+    color: #e6edf7;
 }
 
-/* Botón copiar */
+/* COPY BUTTON */
 .copy-btn {
     position: absolute;
     top: 8px;
     right: 8px;
-    background: #2a6df4;
-    color: #ffffff;
-    padding: 0.35rem 0.7rem;
     border: none;
+    background: #2a6df4;
+    color: white;
+    padding: 0.35rem 0.7rem;
     border-radius: 999px;
     cursor: pointer;
     font-size: 0.75rem;
-    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    transition: 0.2s;
 }
 
 .copy-btn:hover {
     background: #1b53c2;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(42, 109, 244, 0.45);
 }
 
 .copy-btn.copied {
     background: #16a34a;
 }
 
-/* Footer */
 footer {
+    margin-top: 2rem;
     text-align: center;
     color: #9ba3b8;
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
 }
